@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { mcqs } from '@/lib/data';
 import { Level, Topic } from '@/types';
@@ -14,7 +14,7 @@ type UserQuestion = {
   userAnswer: string | null;
 };
 
-export default function QuizTestPage() {
+function QuizContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -66,6 +66,7 @@ export default function QuizTestPage() {
     }, 1000);
 
     return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleOptionClick = (option: string) => {
@@ -330,5 +331,25 @@ export default function QuizTestPage() {
         </div>
       </motion.div>
     </div>
+  );
+}
+
+// Loading fallback
+function LoadingFallback() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-black flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full mx-auto mb-4 animate-spin" />
+        <p className="text-zinc-300">Loading quiz...</p>
+      </div>
+    </div>
+  );
+}
+
+export default function QuizTestPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <QuizContent />
+    </Suspense>
   );
 }
