@@ -118,15 +118,12 @@ const levels = [
 type Topic = (typeof topics)[number]["id"];
 type Level = (typeof levels)[number]["id"];
 
-// Calculate actual questions count from the data
 const calculateTotalQuestions = () => {
   let count = 0;
 
-  // Type-safe iteration over MCQs
   Object.keys(mcqs).forEach((topic) => {
     const topicData = mcqs[topic as keyof typeof mcqs];
     if (topicData) {
-      // Type-safe access to levels
       ["beginner", "intermediate", "advanced", "expert"].forEach((level) => {
         const levelData =
           topicData[
@@ -142,28 +139,22 @@ const calculateTotalQuestions = () => {
   return count;
 };
 
-// Get actual topics count from data
 const getActualTopicsCount = () => {
   return Object.keys(mcqs).length;
 };
 
-// Calculate a dynamic success rate that changes every 2 days
 const calculateSuccessRate = () => {
-  // Get current date and use it to seed the calculation
   const today = new Date();
   const daysSinceEpoch = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
 
-  // Change every 2 days by integer division
   const changePeriod = Math.floor(daysSinceEpoch / 2);
 
-  // Generate a pseudo-random number between 75 and 99 based on the period
-  const seed = changePeriod * 9973; // Using a prime number for better distribution
-  const randomFactor = (seed % 25) + 75; // Range between 75 and 99
+  const seed = changePeriod * 9973;
+  const randomFactor = (seed % 25) + 75;
 
   return randomFactor;
 };
 
-// Client-only background particles component
 const BackgroundParticles = () => {
   const [isMounted, setIsMounted] = useState(false);
   
@@ -173,7 +164,6 @@ const BackgroundParticles = () => {
   
   if (!isMounted) return null;
   
-  // Fixed positions to prevent hydration mismatch
   const positions = [
     { left: "30.51992152906563%", top: "62.11496313178678%", width: "7.207764283057668px", height: "13.583133799208683px" },
     { left: "85.1378920694847%", top: "37.43214393208807%", width: "6.382044131194241px", height: "14.143193469539138px" },
@@ -229,6 +219,7 @@ export default function HomePage() {
   const [selectedTopic, setSelectedTopic] = useState<Topic | "">("");
   const [selectedLevel, setSelectedLevel] = useState<Level | "">("");
   const [error, setError] = useState<string | null>(null);
+  
 
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
@@ -245,7 +236,6 @@ export default function HomePage() {
     threshold: 0.1,
   });
 
-  // Calculate dynamic stats using useMemo to prevent recalculation on every render
   const statsData = useMemo(
     () => [
       { number: calculateTotalQuestions(), label: "Questions", icon: "❓" },

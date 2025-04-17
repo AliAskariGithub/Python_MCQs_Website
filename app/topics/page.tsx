@@ -8,6 +8,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { IoSearch } from "react-icons/io5";
+import { HiChevronUp } from "react-icons/hi";
+import BackgroundParticles from "@/components/BackgroundParticles";
 
 const topics = [
   {
@@ -176,6 +178,15 @@ export default function TopicsPage() {
   const [activeTab, setActiveTab] = useState<"all" | "selected">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredTopics, setFilteredTopics] = useState(topics);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const [headerRef, headerInView] = useInView({
     triggerOnce: true,
@@ -200,6 +211,20 @@ export default function TopicsPage() {
       setFilteredTopics(topics);
     }
   }, [searchQuery]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrollPosition = window.scrollY;
+      setScrollProgress((scrollPosition / totalHeight) * 100);
+      setShowScrollTop(scrollPosition > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleStartQuiz = () => {
     if (selectedTopic && selectedLevel) {
@@ -256,6 +281,12 @@ export default function TopicsPage() {
   return (
     <>
       <Navbar />
+      <div
+        className="fixed top-0 left-0 h-1 bg-indigo-500 z-50"
+        style={{ width: `${scrollProgress}%` }}
+      ></div>
+
+      <BackgroundParticles />
       <main className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-black text-white pt-28 pb-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <motion.div
@@ -623,6 +654,21 @@ export default function TopicsPage() {
           </AnimatePresence>
         </div>
       </main>
+
+      <motion.button
+        className={`fixed bottom-6 right-6 p-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition-all z-30 ${
+          showScrollTop
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10 pointer-events-none"
+        }`}
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showScrollTop ? 1 : 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <HiChevronUp className="w-5 h-5" />
+      </motion.button>
       <Footer />
     </>
   );

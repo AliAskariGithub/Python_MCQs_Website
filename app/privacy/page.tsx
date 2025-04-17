@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import BackgroundParticles from '@/components/BackgroundParticles';
 
 export default function PrivacyPage() {
   const [headerRef, headerInView] = useInView({
@@ -108,6 +109,8 @@ export default function PrivacyPage() {
   return (
     <>
       <Navbar />
+
+      <BackgroundParticles />
       <main className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-black text-white pt-28 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.div
