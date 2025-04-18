@@ -78,7 +78,7 @@ const Navbar = () => {
                     href={item.href}
                     className={`relative px-2 py-1 text-base transition-colors duration-300 ${
                       pathname === item.href 
-                        ? 'text-indigo-400' 
+                        ? 'nav' 
                         : 'text-zinc-300 hover:text-white'
                     }`}
                   >

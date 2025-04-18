@@ -55,6 +55,20 @@ html, body {
   }
 }
 
+.nav {
+  background: linear-gradient(to right, #6366f1, #a855f7, #22d3ee);
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: animate 4s linear infinite
+}
+
+@keyframes animate {
+  to {
+    background-position-x: -100px;
+  }
+}
+
 code, pre, .code, .syntax {
   font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.95em;
