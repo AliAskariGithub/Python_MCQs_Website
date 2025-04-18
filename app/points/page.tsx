@@ -205,7 +205,7 @@ export default function ImportantPointsPage() {
               animate={headerInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400">
+              <span className="h1">
                 Important Python Points
               </span>
             </motion.h1>

@@ -94,7 +94,7 @@ export default function AboutPage() {
               }
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400">
+              <span className="h1">
                 About PyQuizMaster
               </span>
             </motion.h1>
@@ -122,16 +122,16 @@ export default function AboutPage() {
               Our Story
             </h2>
             <p className="text-zinc-300 mb-6">
-              PyQuizMaster was created by a team of passionate Python developers
+              PyQuizMaster was created by a <a href="#developer" className="text-white font-bold">Person</a> of passionate Web, and Python developers
               who believe in the power of interactive learning. We recognized
               that many Python learners needed a structured way to test their
               knowledge and identify areas for improvement.
             </p>
             <p className="text-zinc-300 mb-6">
-              Launched in 2023, our platform has rapidly grown to serve
+              I made this Quiz web in 2025 because the student and other peoples want a platform who provide python Knowledge. This website is completely based on Python Language. Our platform has rapidly grown to serve
               thousands of Python enthusiasts from beginners to experts.
               We&apos;re committed to providing high-quality, up-to-date
-              questions that reflect real-world Python usage and best practices.
+              questions that reflect real-world Python usage like best ,test preparation, interview crack and best practices.
             </p>
             <p className="text-zinc-300">
               Whether you&apos;re preparing for a Python certification, a job
@@ -190,7 +190,8 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          <motion.div
+          <motion.div 
+          id="developer"
             ref={teamRef}
             initial="hidden"
             animate={teamInView ? "visible" : "hidden"}

@@ -304,7 +304,7 @@ export default function TopicsPage() {
               }
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400">
+              <span className="h1">
                 Python Topics
               </span>
             </motion.h1>

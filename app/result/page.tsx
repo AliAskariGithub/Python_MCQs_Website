@@ -277,7 +277,7 @@ export default function ResultPage() {
             animate={statsInView ? "visible" : "hidden"}
             variants={staggerContainerVariants}
           >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6   w-full">
               <motion.div variants={fadeInUpVariants} className="text-center">
                 <div className="text-zinc-400 text-sm mb-1">Topic</div>
                 <div className="text-xl font-semibold">
@@ -291,7 +291,8 @@ export default function ResultPage() {
                   {level.toUpperCase()}
                 </div>
               </motion.div>
-
+              <div className="flex justify-center items-center w-full">
+<div className="grid justify-center items-center w-full grid-cols-2 gap-6">
               <motion.div variants={fadeInUpVariants} className="text-center">
                 <div className="text-zinc-400 text-sm mb-1">Score</div>
                 <div className="text-xl font-semibold">
@@ -305,6 +306,8 @@ export default function ResultPage() {
                   {percentage.toFixed(1)}%
                 </div>
               </motion.div>
+              </div>
+              </div>
             </div>
 
             <motion.div

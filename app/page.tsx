@@ -9,6 +9,10 @@ import Footer from "@/components/Footer";
 import CodeBlock from "@/components/CodeBlock";
 import { mcqs } from "@/lib/data";
 import Image from "next/image";
+import { FaQuestion } from "react-icons/fa";
+import { MdTopic } from "react-icons/md";
+import { MdInsertChart } from "react-icons/md";
+import { TbTargetArrow } from "react-icons/tb";
 
 const topics = [
   {
@@ -238,15 +242,15 @@ export default function HomePage() {
 
   const statsData = useMemo(
     () => [
-      { number: calculateTotalQuestions(), label: "Questions", icon: "❓" },
-      { number: getActualTopicsCount(), label: "Topics", icon: "📚" },
+      { number: calculateTotalQuestions(), label: "Questions", icon: <FaQuestion /> },
+      { number: getActualTopicsCount(), label: "Topics", icon: <MdTopic /> },
       {
         number: calculateSuccessRate(),
         label: "Success Rate",
-        icon: "📈",
+        icon: <MdInsertChart />,
         suffix: "%",
       },
-      { number: levels.length, label: "Difficulty Levels", icon: "🎯" },
+      { number: levels.length, label: "Difficulty Levels", icon: <TbTargetArrow/> },
     ],
     []
   );
@@ -317,7 +321,7 @@ export default function HomePage() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
               >
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400">
+                <span className="h1">
                   Python Quiz Master
                 </span>
               </motion.h1>
@@ -377,7 +381,7 @@ export default function HomePage() {
                   transition={{ delay: index * 0.1 }}
                 >
                   <motion.div
-                    className="text-3xl mb-2"
+                    className="text-3xl mb-2 flex justify-center"
                     animate={{ rotate: [0, 10, 0, -10, 0] }}
                     transition={{
                       duration: 2,
@@ -386,7 +390,7 @@ export default function HomePage() {
                       repeatDelay: 3,
                     }}
                   >
-                    {stat.icon}
+                   <span className="bg-zinc-800/50 text-indigo-300 p-1.5 rounded-full">{stat.icon}</span> 
                   </motion.div>
                   <motion.div className="text-3xl md:text-4xl font-bold neon-text">
                     {stat.number}

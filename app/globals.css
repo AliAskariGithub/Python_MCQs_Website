@@ -41,7 +41,20 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* Code styling */
+.h1 {
+  background: linear-gradient(to right, #6366f1, #a855f7, #22d3ee);
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: animate 10s linear infinite
+}
+
+@keyframes animate {
+  to {
+    background-position-x: -500px;
+  }
+}
+
 code, pre, .code, .syntax {
   font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.95em;
@@ -79,7 +92,6 @@ code:not(.block) {
   font-weight: 500;
 }
 
-/* Syntax highlighting classes */
 .syntax-keyword { color: var(--code-keyword); }
 .syntax-function { color: var(--code-function); }
 .syntax-string { color: var(--code-string); }
@@ -270,7 +282,6 @@ h1, h2, h3 {
   padding: 0 1rem;
 }
 
-/* Responsive utility classes */
 .responsive-container {
   width: 100%;
   padding-left: 1rem;
@@ -303,7 +314,6 @@ h1, h2, h3 {
   }
 }
 
-/* Responsive padding classes */
 .p-responsive {
   padding: 0.75rem;
 }
@@ -326,7 +336,6 @@ h1, h2, h3 {
   }
 }
 
-/* Responsive spacing */
 .my-responsive {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -353,7 +362,6 @@ h1, h2, h3 {
   }
 }
 
-/* Responsive text sizing */
 .text-responsive {
   font-size: 1rem;
   line-height: 1.5;
@@ -377,7 +385,6 @@ h1, h2, h3 {
   }
 }
 
-/* Responsive grid classes */
 .grid-responsive {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -404,7 +411,6 @@ h1, h2, h3 {
   }
 }
 
-/* Flexible item styling */
 .flex-responsive {
   display: flex;
   flex-direction: column;

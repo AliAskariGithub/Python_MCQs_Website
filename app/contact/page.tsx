@@ -7,6 +7,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Swal from "sweetalert2";
 import BackgroundParticles from '@/components/BackgroundParticles';
+import Link from 'next/link';
+import { FiLink } from 'react-icons/fi';
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -99,7 +101,7 @@ export default function ContactPage() {
               animate={headerInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400">
+              <span className="h1">
                 Contact Us
               </span>
             </motion.h1>
@@ -214,7 +216,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-white">Email</h3>
-                      <p className="text-zinc-300">syedaliaskarizaidi1@gmail.com</p>
+                      <Link href={"mailto:syedaliaskarizaidi1@gmail.com"} className="text-zinc-300">syedaliaskarizaidi1@gmail.com</Link>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -225,7 +227,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-white">Phone</h3>
-                      <p className="text-zinc-300">+92 31 2046516</p>
+                      <p className="text-zinc-300">+92 319 2046516</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -261,6 +263,14 @@ export default function ContactPage() {
                       <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
                     </svg>
                   </a>
+                  <a
+                href="https://alis-x-portfolio.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center text-zinc-300 hover:bg-indigo-600 hover:text-white transition-colors"
+              >
+                <FiLink size={20}/>
+              </a>
                 </div>
               </div>
             </div>
