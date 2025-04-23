@@ -215,7 +215,7 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white">Email</h3>
+                      <h3 className="font-light text-white">Email</h3>
                       <Link href={"mailto:syedaliaskarizaidi1@gmail.com"} className="text-zinc-300">syedaliaskarizaidi1@gmail.com</Link>
                     </div>
                   </div>
@@ -226,7 +226,7 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white">Phone</h3>
+                      <h3 className="font-light text-white">Phone</h3>
                       <p className="text-zinc-300">+92 319 2046516</p>
                     </div>
                   </div>
@@ -238,7 +238,7 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white">Location</h3>
+                      <h3 className="font-light text-white">Location</h3>
                       <p className="text-zinc-300">Landhi 36/B Street 44<br />Karachi, Pakistan</p>
                     </div>
                   </div>

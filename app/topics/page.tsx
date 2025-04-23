@@ -11,6 +11,7 @@ import { IoSearch } from "react-icons/io5";
 import { HiChevronUp } from "react-icons/hi";
 import BackgroundParticles from "@/components/BackgroundParticles";
 
+
 const topics = [
   {
     id: "google_colab",

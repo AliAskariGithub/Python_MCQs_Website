@@ -76,12 +76,12 @@ const Navbar = () => {
                 >
                   <Link 
                     href={item.href}
-                    className={`relative px-2 py-1 text-base transition-colors duration-300 ${
-                      pathname === item.href 
-                        ? 'nav' 
-                        : 'text-zinc-300 hover:text-white'
-                    }`}
                   >
+                    <span className={`relative px-2 py-1 text-base transition-colors duration-200 ${
+                      pathname === item.href 
+                        ? 'nav font-extrabold' 
+                        : 'text-zinc-300 hover:text-white/70 font-light'
+                    }`}>
                     {item.label}
                     {pathname === item.href && (
                       <motion.span 
@@ -89,6 +89,7 @@ const Navbar = () => {
                         layoutId="activeNavIndicator"
                       />
                     )}
+                    </span>
                   </Link>
                 </motion.li>
               ))}

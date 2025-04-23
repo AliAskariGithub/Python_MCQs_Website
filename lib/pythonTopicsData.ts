@@ -218,7 +218,7 @@ export const pythonTopics: Topic[] = [
     ],
   },
   {
-    id: "operators_keywords_variables",
+    id: "operators-keywords-variables",
     title: "Operators, Keywords, and Variables",
     description:
       "Keywords are reserved words in Python that have special meanings and cannot be used as variable names. They are used to define the structure of the program and the operations that can be performed on the data.",
@@ -292,7 +292,8 @@ export const pythonTopics: Topic[] = [
   {
     id: "string-and-casting",
     title: "String and Casting",
-    description: "Strings in Python are immutable sequences used to store text. Casting allows conversion between different data types, like numbers to strings.",
+    description:
+      "Strings in Python are immutable sequences used to store text. Casting allows conversion between different data types, like numbers to strings.",
     points: [
       {
         text: "The text is written in the form of a string. And it is enclosed in single, double, or triple quotes.",
@@ -411,62 +412,304 @@ export const pythonTopics: Topic[] = [
     description: "Statements that control the flow of execution in Python",
     points: [
       {
+        text: "Control flow is the order in which the statements are executed in a program.",
+        highlights: ["Control flow"],
+      },
+      {
         text: "Conditional statements (if, elif, else) allow code to execute based on certain conditions.",
         highlights: ["if", "elif", "else"],
         code: "if age < 18:\n    print('Minor')\nelif age >= 18 and age < 65:\n    print('Adult')\nelse:\n    print('Senior')",
       },
       {
-        text: "For loops iterate over a sequence (like a list, tuple, dictionary, set, or string).",
-        highlights: ["For loops", "iterate", "sequence"],
+        text: "If statement is executed if the condition is true.",
+        highlights: ["if"],
+        code: "if age < 18:\n    print('Minor')",
+      },
+      {
+        text: "Elif statement is executed when the if condition is false and the current condition is true.",
+        highlights: ["elif", "if"],
+        code: "elif age >= 18 and age < 65:\n    print('Adult')",
+      },
+      {
+        text: "Else statement is executed when the if, and elif condition is false.",
+        highlights: ["else", "if", "elif"],
+        code: "else:\n    print('Senior')",
+      },
+      {
+        text: "Logical operators are used to combine conditional statements. And they are and, or, not. ",
+        highlights: ["Logical", "operators", "and", "or", "not"],
+        code: "if age < 18:\n    print('Minor')\nelif age >= 18 and age < 65:\n    print('Adult')\nelse:\n    print('Senior')",
+      },
+      {
+        text: "For loop is used to iterate over a sequence (like a list, tuple, dictionary, set, or string).",
+        highlights: ["For loop", "iterate", "sequence"],
         code: "for i in range(5):\n    print(i)  # Prints 0, 1, 2, 3, 4",
       },
       {
-        text: "While loops execute a block of code as long as a condition is true.",
-        highlights: ["While loops", "condition is true"],
-        code: "count = 0\nwhile count < 5:\n    print(count)\n    count += 1",
+        text: "While loop is used to execute a block of code repeatedly until a condition is met.",
+        highlights: ["While loop", "execute", "block of code"],
+        code: "while count < 5:\n    print(count)\n    count += 1",
       },
       {
-        text: "Break statement exits the loop prematurely.",
-        highlights: ["Break"],
+        text: "break statement exits the loop prematurely.",
+        highlights: ["break"],
         code: "for i in range(10):\n    if i == 5:\n        break\n    print(i)  # Prints 0, 1, 2, 3, 4",
       },
       {
         text: "Continue statement skips the current iteration and continues with the next.",
-        highlights: ["Continue"],
+        highlights: ["continues"],
         code: "for i in range(10):\n    if i % 2 == 0:\n        continue\n    print(i)  # Prints odd numbers: 1, 3, 5, 7, 9",
+      },
+      {
+        text: "Pass is a dummy statement that does nothing. It is used to make the code syntactically correct.",
+        highlights: ["Pass", "dummy"],
+        code: "for i in range(10):\n    pass  # This will do nothing",
+      },
+      {
+        text: "Nested Loop and conditions is possible in python.",
+        highlights: ["Nested Loop", "conditions"],
+      },
+    ],
+  },
+  {
+    id: "lists-tuples-dict",
+    title: "Lists, Tuples, and Dictionaries",
+    description: "Lists, Tuples, and Dictionaries in Python",
+    points: [
+      {
+        text: "List is a collection of items that are ordered and mutable. And it is represented as [].",
+        highlights: ["List", "collection", "[]"],
+      },
+      {
+        text: "Tuple is a collection of items that are ordered and immutable. And it is represented as ()",
+        highlights: ["Tuple", "collection", "()"],
+      },
+
+      {
+        text: "Dictionary is a collection of key-value pairs. And it is represented as {}.",
+        highlights: ["Dictionary", "collection", "{}"],
+      },
+      {
+        text: "In list we can take the elements by using positive and negative index number.",
+        highlights: ["positive", "negative", "index number"],
+        code: "list = [1, 2, 3, 4, 5]\nprint(list[0]) \t\t#output: 1\nprint(list[-1]) \t\t#output: 5",
+      },
+      {
+        text: "append() method is used to add an element to the end of the list.",
+        highlights: ["append()"],
+        code: "list = [1, 2, 3, 4, 5]\nlist.append(6)\nprint(list) \t\t#output: [1, 2, 3, 4, 5, 6]",
+      },
+      {
+        text: "pop() method is used to remove an element from the list at a specific index.",
+        highlights: ["pop()"],
+        code: "list = [1, 2, 3, 4, 5]\nlist.pop(0)\nprint(list) \t\t#output: [2, 3, 4, 5]",
+      },
+      {
+        text: "remove() method is used to remove an element from the list.",
+        highlights: ["remove()"],
+        code: "list = [1, 2, 3, 4, 5]\nlist.remove(3)\nprint(list) \t\t#output: [1, 2, 4, 5]",
+      },
+      {
+        text: "insert() method is used to add an element to the list at a specific index.",
+        highlights: ["insert()"],
+        code: "list = [1, 2, 3, 4, 5]\nlist.insert(0, 0)\nprint(list) \t\t#output: [0, 1, 2, 3, 4, 5]",
+      },
+      {
+        text: "extend() method is used to add multiple elements to the end of the list.",
+        highlights: ["extend()"],
+        code: "list = [1, 2, 3, 4, 5]\nlist.extend([6, 7, 8])\nprint(list) \t\t#output: [1, 2, 3, 4, 5, 6, 7, 8]",
+      },
+      {
+        text: "Tuple is a collection of items that are ordered and immutable. And it is represented as ()",
+        highlights: ["Tuple", "collection", "()"],
+      },
+      {
+        text: "In Dictionary we use key and value to store the data.",
+        highlights: ["key", "value"],
+        code: "dict = {'name': 'Ali', 'age': 20, 'city': 'Tehran'}\nprint(dict['name']) \t\t#output: Ali",
+      },
+      {
+        text: "In Dictionary every key is unique and immutable.",
+        highlights: ["key", "unique", "immutable"],
+      },
+      {
+        text: "IN operators check if a key is present in the dictionary.",
+        highlights: ["IN operators"],
+        code: "dict = {'name': 'Ali', 'age': 20, 'city': 'Tehran'}\nprint('name' in dict) \t\t#output: True",
+      },
+      {
+        text: "Len() function is used to get the length of the dictionary.",
+        highlights: ["Len()"],
+        code: "dict = {'name': 'Ali', 'age': 20, 'city': 'Tehran'}\nprint(len(dict)) \t\t#output: 3",
+      },
+    ],
+  },
+  {
+    id: "sets",
+    title: "Sets",
+    description:
+      "Sets in Python are unordered collections of unique, immutable elements. They are defined using curly braces {} or the set() constructor. Sets are mutable, allowing addition and removal of elements, but the elements themselves must be immutable (e.g., numbers, strings, tuples). Sets are commonly used for membership testing, removing duplicates, and performing mathematical set operations like union, intersection, and difference.",
+    points: [
+      {
+        text: "Set is a collection of items that are unordered and mutable.",
+        highlights: ["Set", "unordered", "mutable"],
+      },
+      {
+        text: "Set remove the duplicate elements from the list.",
+        highlights: ["remove", "duplicate"],
+        code: "list = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]\nset = set(list)\nprint(set) \t\t#output: {1, 2, 3, 4, 5}",
+      },
+      {
+        text: "In set we can use add() method to add an element to the set.",
+        highlights: ["add()"],
+        code: "set = {1, 2, 3, 4, 5}\nset.add(6)\nprint(set) \t\t#output: {1, 2, 3, 4, 5, 6}",
+      },
+      {
+        text: "In set we can use remove() method to remove an element from the set.",
+        highlights: ["remove()"],
+      },
+      {
+        text: "In set we can use clear() method to remove all elements from the set.",
+        highlights: ["clear()"],
+        code: "set = {1, 2, 3, 4, 5}\nset.clear()\nprint(set) \t\t#output: set()",
+      },
+      {
+        text: "In set we can use union() method to join two sets.",
+        highlights: ["union()"],
+        code: "set1 = {1, 2, 3, 4, 5}\nset2 = {6, 7, 8, 9, 10}\nprint(set1.union(set2)) \t\t#output: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}",
+      },
+      {
+        text: "In set we can use intersection() method to find the common elements in two sets.",
+        highlights: ["intersection()"],
+        code: "set1 = {1, 2, 3, 4, 5}\nset2 = {6, 7, 8, 9, 10}\nprint(set1.intersection(set2)) \t\t#output: set()",
+      },
+      {
+        text: "In set we can use difference() method to find the difference between two sets.",
+        highlights: ["difference()"],
+        code: "set1 = {1, 2, 3, 4, 5}\nset2 = {6, 7, 8, 9, 10}\nprint(set1.difference(set2)) \t\t#output: {1, 2, 3, 4, 5}",
+      },
+      {
+        text: "Sets are mutable but the list of elements in the set must be immutable.",
+        highlights: ["mutable", "immutable"],
+        code: "set = {1, 2, 3, 4, 5}\nset.add(6) \t\t#output: {1, 2, 3, 4, 5, 6}",
+      },
+      {
+        text: "In set IN Operators check if an element is present in the set.",
+        highlights: ["IN Operators"],
+        code: "set = {1, 2, 3, 4, 5}\nprint(1 in set) \t\t#output: True",
+      },
+      {
+        text: "In set the order of the elements is not fixed.",
+        highlights: ["order", "fixed"],
+        code: "set = {1, 2, 3, 4, 5}\nprint(set) \t\t#output: {1, 2, 3, 4, 5}",
+      },
+      {
+        text: "In set we can use len() function to get the length of the set.",
+        highlights: ["len()"],
+        code: "set = {1, 2, 3, 4, 5}\nprint(len(set)) \t\t#output: 5",
+      },
+      {
+        text: "In set set() can convert the iterable to set.",
+        highlights: ["set()"],
+        code: "set = set([1, 2, 3, 4, 5])\nprint(set) \t\t#output: {1, 2, 3, 4, 5}",
+      },
+      {
+        text: "In set we can use frozenset() to create an immutable set.",
+        highlights: ["frozenset()"],
+        code: "set = frozenset([1, 2, 3, 4, 5])\nprint(set) \t\t#output: frozenset({1, 2, 3, 4, 5})",
       },
     ],
   },
   {
     id: "functions",
     title: "Functions",
-    description: "Creating and using functions in Python",
+    description:
+      "Functions in Python are defined using the def keyword. They can take parameters and return values. Functions are used to organize code and make it reusable.",
     points: [
       {
-        text: "Functions are defined using the def keyword, followed by the function name and parameters.",
-        highlights: ["def", "function name", "parameters"],
-        code: "def greet(name):\n    return f'Hello, {name}!'",
+        text: "Functions are declared using the def keyword.",
+        highlights: ["def"],
+        code: "def greet(name):\n    return f'Hello, {name}'",
       },
       {
-        text: "Functions can have default parameter values that are used when arguments aren't provided.",
-        highlights: ["default parameter values"],
-        code: "def greet(name, greeting='Hello'):\n    return f'{greeting}, {name}!'",
+        text: "Functions can take parameters(input) and return values(output).",
+        highlights: ["parameters(input)", "return values(output)"],
+        code: "def greet(name):\n    return f'Hello, {name}'",
       },
       {
-        text: "Functions can accept a variable number of arguments using *args and **kwargs.",
+        text: "Default parameters are the parameters that are assigned a default value.",
+        highlights: ["default parameters"],
+        code: "def greet(name='World'):\n    return f'Hello, {name}'",
+      },
+      {
+        text: "We can return multiple values from a function.",
+        highlights: ["multiple values"],
+        code: "def add_sub(a, b):\n    return a+b, a-b",
+      },
+      {
+        text: "keyword arguments improve the readability of the code.",
+        highlights: ["keyword arguments"],
+        code: "def greet(name='World', age=20):\n    return f'Hello, {name} and you are {age} years old'",
+      },
+      {
+        text: "Function can be nested in another function.",
+        highlights: ["nested", "function"],
+        code: "def outer_function(): \n\tprint('This is the outer function.') \n\n\tdef inner_function(): \n\t\tprint('This is the inner function.') \n\n\t# Call the inner function \n\tinner_function() \n\n# Call the outer function \nouter_function() \n\n#output: \nThis is the outer function. \nThis is the inner(nested) function.",
+      },
+      {
+        text: "Docstrings are used to describe the function.",
+        highlights: ["Docstrings"],
+        code: "def greet(name):\n    '''This function greets the user with a message.''' \n    return f'Hello, {name}'",
+      },
+      {
+        text: "Lambda functions are small, anonymous functions that can have any number of arguments, but can only have one expression.",
+        highlights: ["Lambda", "anonymous", "function"],
+        code: "def square(x):\n    return x*x",
+      },
+      {
+        text: "We can use the *args and **kwargs to pass a variable number of arguments to a function.",
         highlights: ["*args", "**kwargs"],
-        code: "def example_function(*args, **kwargs):\n    print(args)    # Tuple of positional arguments\n    print(kwargs)  # Dictionary of keyword arguments",
+        code: "def add(*args):\n    return sum(args)\ndef add_sub(a, b):\n    return a+b, a-b",
+      },
+    ],
+  },
+  {
+    id: "enums",
+    title: "Enums",
+    description: "Enums in Python are a way to define a set of named values that are immutable and can be used to represent a finite set of options.",
+    points: [
+      {
+        text: "Enums are used to define a set of named values that are immutable and can be used to represent a finite set of options.",
+        highlights: ["Enums"],
+        code: "from enum import Enum\nclass Color(Enum):\n    RED = 1\n    GREEN = 2\n    BLUE = 3",
       },
       {
-        text: "Lambda functions are small anonymous functions defined using the lambda keyword.",
-        highlights: ["Lambda", "anonymous functions"],
-        code: "square = lambda x: x * x\nprint(square(5))  # Output: 25",
+        text: "Enum are created by importing Enum class from enum module.", 
+        highlights: ["import", "Enum"],
+        code: "from enum import Enum",
       },
       {
-        text: "Recursive functions call themselves during their execution.",
-        highlights: ["Recursive functions"],
-        code: "def factorial(n):\n    if n == 0 or n == 1:\n        return 1\n    else:\n        return n * factorial(n-1)",
+        text: "Define enums by using Enum class.",
+        highlights: ["Enum"],
+        code: "from enum import Enum\nclass Color(Enum):\n    RED = 1\n    GREEN = 2\n    BLUE = 3",
       },
+      {
+        text: "Enum members have name and value.",
+        highlights: ["name", "value"],  
+        code: "from enum import Enum\nclass Color(Enum):\n    RED = 1\n    GREEN = 2\n    BLUE = 3",
+      },
+      {
+        text: "Enum members can be accessed by their name.",
+        highlights: ["name"],
+        code: "from enum import Enum\nclass Color(Enum):\n    RED = 1\n    GREEN = 2\n    BLUE = 3",
+      },
+      {
+        text: "Enum members can be accessed by their value.",
+        highlights: ["value"],
+      },
+      {
+        text: ""
+      }
     ],
   },
   {

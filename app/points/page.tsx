@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import { HiChevronUp, HiSearch, HiX } from 'react-icons/hi';
 import BackgroundParticles from '@/components/BackgroundParticles';
 
-interface SectionRefs {
+interface SectionRefs { 
   [key: string]: { 
     ref: HTMLDivElement | null;
     inView: boolean;
@@ -205,7 +205,7 @@ export default function ImportantPointsPage() {
               animate={headerInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <span className="h1">
+              <span className={`h1 font`}>
                 Important Python Points
               </span>
             </motion.h1>

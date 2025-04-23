@@ -257,12 +257,12 @@ function QuizContent() {
                 transition={{ duration: 0.4 }}
               >
                 <motion.p
-                  className="text-lg md:text-xl font-medium mb-6 leading-relaxed"
+                  className="text-lg md:text-xl font-medium mb-6 leading-relaxed tracking-wide text-white"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
                 >
-                  {currentQ.question}
+                <p>{currentQ.question}</p>  
                 </motion.p>
 
                 <div className="mt-6 grid gap-3">
@@ -270,11 +270,11 @@ function QuizContent() {
                     <motion.button
                       key={i}
                       onClick={() => handleOptionClick(option)}
-                      className={`w-full text-left px-5 py-3 rounded-xl border transition-all flex items-center
+                      className={`w-full text-left hover:text-white/85 tracking-wide px-5 py-3 rounded-xl border transition-all flex items-center
                       ${
                         currentQ.userAnswer === option
                           ? "border-indigo-500 bg-indigo-900/30 neon-border"
-                          : "border-zinc-700 bg-zinc-800/50 hover:bg-zinc-700/50"
+                          : "border-zinc-700 bg-zinc-800/50 hover:bg-zinc-700/50 text-white/75"
                       }`}
                       variants={optionVariants}
                       custom={i}

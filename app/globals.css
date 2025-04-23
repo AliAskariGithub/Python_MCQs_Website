@@ -34,7 +34,7 @@
 html, body {
   background-color: var(--bg-dark);
   color: var(--text-light);
-  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-family: var(--font-paragraph), var(--font-poppins), system-ui, sans-serif;
   height: 100%;
   margin: 0;
   line-height: 1.5;
@@ -56,16 +56,19 @@ html, body {
 }
 
 .nav {
-  background: linear-gradient(to right, #6366f1, #a855f7, #22d3ee);
+  background: linear-gradient(to right, #7275f7, #af60f8, #3cd5ec);
   background-size: cover;
   background-clip: text;
   color: transparent;
-  animation: animate 4s linear infinite
+  animation: animate 10s linear infinite
 }
 
 @keyframes animate {
   to {
     background-position-x: -100px;
+  }
+  from {
+    background-position-x: 100px;
   }
 }
 
@@ -132,10 +135,15 @@ code:not(.block) {
   background: var(--scrollbar-track);
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   color: var(--text-lighter);
   font-weight: 600;
   letter-spacing: -0.025em;
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+
+p, span, div, li, a, button, input, textarea, select, label {
+  font-family: var(--font-paragraph), system-ui, sans-serif;
 }
 
 @keyframes fadeIn {
